@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 
 class LeaderboardPage extends Component {
 
+	constructor(props) {
+		super(props);
+		this.props.getUsers();
+	}
+
   componentDidMount() {
   }
 
@@ -16,7 +21,7 @@ class LeaderboardPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    users: state.users
+    users: state.usersReducer.users
   };
 }
 
