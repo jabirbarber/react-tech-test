@@ -26,3 +26,68 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+body {
+  padding: 10px;
+}
+
+
+.table {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header, .row {
+  display: flex;
+}
+
+.table-header div, .row div {
+  flex: 1;
+  padding: 0.2rem 0.4em;
+  border: 1px solid rgb(238, 238, 238);
+}
+.table-header {
+  background-color: rgb(238, 238, 238);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: black;
+  color: white;
+}
+
+.sortarrow {
+  font-weight: bold;
+  float: right;
+}
+.sortarrow.up:before {
+  content: "\2193";
+}
+.sortarrow.down:before {
+  content: "\2191";
+}
+.pagination-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.pagination-container div {
+  padding: 10px;
+  cursor: pointer;
+}
+.pagination-container div:hover {
+  background: grey;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination-container div.selected {
+  background: grey;
+  color: white;
+  font-weight: bold;
+}
