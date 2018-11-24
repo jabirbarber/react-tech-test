@@ -3,5 +3,6 @@ services:
   mockapi:
     container_name: scrabble-mock-api
     image: elderops/scrabble-mock-api:latest
+    tty: true
     ports:
       - "3000:3000"
