@@ -1,3 +1,16 @@
+
+# Cover Note
+
+The following submission of the tech test is implemented in ReactJS using Redux for state management and Redux-Thunk for ansyncrony.
+To get started, clone the repo and run npm install followed by npm start from the root of the project.
+
+
+
+
+
+-------------------------------------------------------------
+
+
 # Scrabble Club (React)
 
 ## Introduction
