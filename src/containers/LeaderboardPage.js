@@ -4,6 +4,7 @@ import { getUsers, getLeaderboard } from '../actions';
 import { Link } from "react-router-dom";
 import LeaderBoardRow from '../components/leaderboardrow';
 import SortableHeaderCell from '../components/sortableheadercell';
+import LoadingIndicator from '../components/loadingindicator';
 
 class LeaderboardPage extends Component {
 
@@ -67,6 +68,9 @@ class LeaderboardPage extends Component {
   		let rowProps = {...data, name: name, key: data.userId, onRowClick: this.onLeaderBoardRowClick.bind(this, data)};
   		return name && <LeaderBoardRow {...rowProps} />;
   	});
+    if (this.props.isLoading) {
+      return <LoadingIndicator />
+    }
     return (
     	<div>
     		<h3>Leaderboard</h3>
@@ -100,7 +104,8 @@ function mapStateToProps(state) {
   return {
     users: state.usersReducer.users,
     leaderboardData: state.leaderboardReducer.data,
-    totalResults: state.leaderboardReducer.totalResults
+    totalResults: state.leaderboardReducer.totalResults,
+    isLoading: state.usersReducer.usersLoading || state.leaderboardReducer.leaderboardLoading
   };
 }
 

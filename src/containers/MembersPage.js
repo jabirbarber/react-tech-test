@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getUsers, getLeaderboard, updateUser, resetUpdateUserError } from '../actions';
 import { Link } from "react-router-dom";
 import MembersDropdown from '../components/membersdropdown';
+import LoadingIndicator from '../components/loadingindicator';
 
 class MembersPage extends Component {
 
@@ -34,6 +35,9 @@ class MembersPage extends Component {
   }
 
   render() {
+    if (this.props.usersLoading) {
+      return <LoadingIndicator />
+    }
     return (
       <div>
         <h3>Members</h3>
@@ -174,6 +178,7 @@ class MembersPage extends Component {
 function mapStateToProps(state) {
   return {
     users: state.usersReducer.users,
+    usersLoading: state.usersReducer.usersLoading,
     updateUserError: state.usersReducer.updateUserError,
     updateUserLoading: state.usersReducer.updateUserLoading
   };

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getUsers, getGames } from '../actions';
 import { Link } from "react-router-dom";
 import ProfileAttribute from '../components/profileattribute';
+import LoadingIndicator from '../components/loadingindicator';
 
 class ProfilePage extends Component {
   constructor(props) {
@@ -22,6 +23,9 @@ class ProfilePage extends Component {
   	const { wins, losses, averageScore, highestScore } = this.selectedUser.extendedData;
   	const againstUserName = this.props.users[highestScore.against].name;
   	const highScoreDate = new Date().toDateString(); // @todo - hookup
+    if (this.props.isLoading) {
+      return <LoadingIndicator />;
+    }
     return (
     	<div>
     		<h3>{ this.selectedUser.name }</h3>
@@ -84,7 +88,8 @@ function mapStateToProps(state) {
   return {
     users: state.usersReducer.users,
     games: state.gamesReducer.games,
-    totalGamesResults: state.gamesReducer.totalResults
+    totalGamesResults: state.gamesReducer.totalResults,
+    isLoading: state.gamesReducer.gamesLoading
   };
 }
 
