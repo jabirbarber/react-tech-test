@@ -1,4 +1,4 @@
-import { fetchUsersEndpoint, fetchLeaderboardEndpoint } from '../api/scrabbleapi';
+import { fetchUsersEndpoint, fetchLeaderboardEndpoint, fetchGamesEndpoint } from '../api/scrabbleapi';
 
 export const FETCH_USERS_START = 'FETCH_USERS_START';
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
@@ -7,6 +7,10 @@ export const FETCH_USERS_FAIL = 'FETCH_USERS_FAIL';
 export const FETCH_LEADERBOARD_START = 'FETCH_LEADERBOARD_START';
 export const FETCH_LEADERBOARD_SUCCESS = 'FETCH_LEADERBOARD_SUCCESS';
 export const FETCH_LEADERBOARD_FAIL = 'FETCH_LEADERBOARD_FAIL';
+
+export const FETCH_GAMES_START = 'FETCH_GAMES_START';
+export const FETCH_GAMES_SUCCESS = 'FETCH_GAMES_SUCCESS';
+export const FETCH_GAMES_FAIL = 'FETCH_GAMES_FAIL';
 
 //@todo - seperate out action logic into seperate files
 
@@ -55,15 +59,44 @@ export function getLeaderboard(params) {
     
     fetchLeaderboardEndpoint(params)
     	.then(resp => {
-    		var totalPages = resp.headers.get('X-Total-Count');
+    		var totalResults = resp.headers.get('X-Total-Count');
     		resp.json().then(data => {
     			var leaderBoardData = {
-    				totalPages,
+    				totalResults,
     				data
     			}
 	    		dispatch(getLeaderboardSuccessAction(leaderBoardData))
     		})
     	})
     	.catch(err => dispatch({ type: FETCH_LEADERBOARD_FAIL, payload: err }))
+  }
+}
+
+// Games Actions
+
+export function getGamesSuccessAction(payload) {
+    return {
+        type: FETCH_GAMES_SUCCESS,
+        payload: payload
+    }
+}
+
+export function getGames(params) {
+  return (dispatch, getState) => {
+    dispatch({ type: FETCH_GAMES_START });
+    
+    fetchGamesEndpoint(params)
+        .then(resp => {
+            var totalResults = resp.headers.get('X-Total-Count');
+            console.log(totalResults);
+            resp.json().then(data => {
+                var gamesData = {
+                    totalResults,
+                    games: data
+                }
+                dispatch(getGamesSuccessAction(gamesData))
+            })
+        })
+        .catch(err => dispatch({ type: FETCH_GAMES_FAIL, payload: err }))
   }
 }

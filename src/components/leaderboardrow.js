@@ -1,8 +1,8 @@
 import React from 'react';
 
-const LeaderBoardRow = ({userId, wins, losses, averageScore, userName}) => (
-  <div className="row">
-    <div>{userName || userId}</div>
+const LeaderBoardRow = ({userId, wins, losses, averageScore, name, onRowClick}) => (
+  <div className="row clickable" onClick={onRowClick}>
+    <div>{name}</div>
     <div>{wins}</div>
     <div>{losses}</div>
     <div>{averageScore}</div>       

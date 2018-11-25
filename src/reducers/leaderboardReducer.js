@@ -6,7 +6,7 @@ import {
 
 const initial = {
 	data: [],
-	totalPages: 10,
+	totalResults: 0,
 	leaderboardLoading: false,
 	leaderboardError: null
 }
@@ -18,12 +18,13 @@ export default (state = initial, action) => {
         case FETCH_LEADERBOARD_FAIL:
             return { ...state, leaderboardLoading: false, leaderboardError: action.payload };
         case FETCH_LEADERBOARD_SUCCESS:
+            console.log(action.payload.totalResults);
             return {
             	...state,
             	leaderboardLoading: false,
             	leaderboardError: null,
             	data: action.payload.data,
-            	totalPages: action.totalPages || state.totalPages
+            	totalResults: Number(action.payload.totalResults),
             };
         default:
             return state;

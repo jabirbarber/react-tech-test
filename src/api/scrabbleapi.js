@@ -16,6 +16,17 @@ export const fetchLeaderboardEndpoint = (params) => {
 	return fetch(endpoint + '?' + convertObjToUrlParams(params), fetchData)
 }
 
+export const fetchGamesEndpoint = (params) => {
+	let fetchData = { 
+	    method: 'GET', 
+	    headers: {
+			'X-Total-Count': true
+		}
+	}
+	let endpoint = `${baseUrl}/games`;
+	return fetch(endpoint + '?' + convertObjToUrlParams(params), fetchData)
+}
+
 const convertObjToUrlParams = (obj) => {
 	if (obj) return new URLSearchParams(Object.entries(obj)).toString();
 	return '';

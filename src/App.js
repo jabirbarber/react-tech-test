@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import LeaderboardPage from './containers/LeaderboardPage';
 import ProfilePage from './containers/ProfilePage';
+import MembersPage from './containers/MembersPage';
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
             <Link to="/">Leaderboard</Link>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="/members">Members</Link>
           </li>
         </ul>
 
@@ -25,6 +26,7 @@ class App extends Component {
 
         <Route exact path="/" component={LeaderboardPage} />
         <Route path="/profile" component={ProfilePage} />
+        <Route path="/members" component={MembersPage} />
       </div>
     </Router>
   }
