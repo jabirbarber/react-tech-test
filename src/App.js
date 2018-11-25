@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return <Router>
       <div>
-        <ul>
+        <ul className="nav">
           <li>
             <Link to="/">Leaderboard</Link>
           </li>

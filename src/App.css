@@ -83,6 +83,7 @@ body {
     justify-content: space-between;
     padding: 10px;
     background: #e9ff77;
+    margin: auto;
 }
 
 .attribute-container.sub {
@@ -137,12 +138,14 @@ body {
   color: white;
   font-weight: bold;
   padding: 10px;
+  margin-left: 25%;
+  margin-bottom: 20px;
 }
 
 .members-form {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin: auto;
   width: 50%;
 }
 
@@ -151,16 +154,19 @@ body {
 }
 
 .form-error {
-    background: #d82823;
-    width: 50%;
-    padding: 8px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    color: white;
-    text-transform: capitalize;
-    font-weight: bold;
-    margin-top: 8px;
-    text-align: center;
+  background: #d82823;
+  width: 50%;
+  padding: 8px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-top: 8px;
+  text-align: center;
+  margin: auto;
+  margin-top: 18px;
 }
 
 .members-form button {
@@ -194,4 +200,39 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  height: 50px;
+}
+
+.nav li {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  background: #383128;
+}
+
+.nav li:hover, .nav li:active {
+  background: #796c5c;
+}
+
+.nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+h3 {
+  text-align: center;
 }
