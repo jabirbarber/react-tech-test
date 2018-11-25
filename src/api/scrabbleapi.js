@@ -1,4 +1,4 @@
-const baseUrl = 'http://192.168.99.100:3000';
+const baseUrl = 'http://localhost:3000'; //http://192.168.99.100:3000';
 
 export const fetchUsersEndpoint = () => {
 	let endpoint = `${baseUrl}/users`;
