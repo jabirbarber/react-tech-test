@@ -129,3 +129,47 @@ body {
   padding: 0px;
   justify-content: flex-end;
 }
+
+.members-dropdown {
+  width: 50%;
+  height: 46px;
+  background: #171635;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.members-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 50%;
+}
+
+.members-form input {
+  margin-left: 10px;
+}
+
+.form-error {
+    background: #d82823;
+    width: 50%;
+    padding: 8px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.members-form button {
+    height: 42px;
+    color: #fff;
+    background-color: #efa53c;
+    border-color: #eea236;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

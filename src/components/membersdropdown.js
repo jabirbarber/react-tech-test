@@ -14,7 +14,7 @@ const MembersDropdown = ({ members, onMemberChange }) => {
 		)
 	}
 	return (
-		<select onChange={onMemberChange}>
+		<select onChange={onMemberChange} className="members-dropdown">
 		  { options }
 		</select>
 	);

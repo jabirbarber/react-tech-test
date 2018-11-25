@@ -1,4 +1,4 @@
-import { fetchUsersEndpoint, fetchLeaderboardEndpoint, fetchGamesEndpoint } from '../api/scrabbleapi';
+import { fetchUsersEndpoint, fetchLeaderboardEndpoint, fetchGamesEndpoint, updateUserEndpoint } from '../api/scrabbleapi';
 
 export const FETCH_USERS_START = 'FETCH_USERS_START';
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
@@ -11,6 +11,12 @@ export const FETCH_LEADERBOARD_FAIL = 'FETCH_LEADERBOARD_FAIL';
 export const FETCH_GAMES_START = 'FETCH_GAMES_START';
 export const FETCH_GAMES_SUCCESS = 'FETCH_GAMES_SUCCESS';
 export const FETCH_GAMES_FAIL = 'FETCH_GAMES_FAIL';
+
+export const UPDATE_USER_START = 'UPDATE_USER_START';
+export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
+export const UPDATE_USER_FAIL = 'UPDATE_USER_FAIL';
+export const UPDATE_USER_ERROR_RESET = 'UPDATE_USER_ERROR_RESET';
+
 
 //@todo - seperate out action logic into seperate files
 
@@ -33,6 +39,27 @@ export function getUsers() {
     		dispatch(getUsersSuccessAction(mappedUsers))
     	})
     	.catch(err => dispatch({ type: FETCH_USERS_FAIL, payload: err }))
+  }
+}
+
+export function updateUser(userId, newUserObject) {
+  return (dispatch, getState) => {
+    dispatch({ type: UPDATE_USER_START });
+    updateUserEndpoint(userId, newUserObject)
+        .then(resp => {
+            if (resp.errors || !resp.id) {
+                dispatch({ type: UPDATE_USER_FAIL, payload: resp })
+            } else {
+                dispatch({ type: UPDATE_USER_SUCCESS, payload: resp })
+            }
+        })
+        .catch(err => dispatch({ type: UPDATE_USER_FAIL, payload: err }))
+  }
+}
+
+export function resetUpdateUserError() {
+  return (dispatch, getState) => {
+    dispatch({ type: UPDATE_USER_ERROR_RESET });
   }
 }
 
