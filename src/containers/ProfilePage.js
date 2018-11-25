@@ -21,7 +21,7 @@ class ProfilePage extends Component {
 
   render() {
   	const { wins, losses, averageScore, highestScore } = this.selectedUser.extendedData;
-  	const againstUserName = this.props.users[highestScore.against].name;
+  	const againstUserName = this.props.users[highestScore.against] && this.props.users[highestScore.against].name;
   	const highScoreDate = new Date().toDateString(); // @todo - hookup
     if (this.props.isLoading) {
       return <LoadingIndicator />;
