@@ -7,29 +7,29 @@ import MembersPage from './containers/MembersPage';
 
 class App extends Component {
 
-  componentDidMount() {
-  }
+	componentDidMount() {
+	}
 
-  render() {
-    return <Router>
-      <div>
-        <ul className="nav">
-          <li>
-            <Link to="/">Leaderboard</Link>
-          </li>
-          <li>
-            <Link to="/members">Members</Link>
-          </li>
-        </ul>
+	render() {
+		return <Router>
+			<div>
+				<ul className="nav">
+					<li>
+						<Link to="/">Leaderboard</Link>
+					</li>
+					<li>
+						<Link to="/members">Members</Link>
+					</li>
+				</ul>
 
-        <hr />
+				<hr />
 
-        <Route exact path="/" component={LeaderboardPage} />
-        <Route path="/profile" component={ProfilePage} />
-        <Route path="/members" component={MembersPage} />
-      </div>
-    </Router>
-  }
+				<Route exact path="/" component={LeaderboardPage} />
+				<Route path="/profile" component={ProfilePage} />
+				<Route path="/members" component={MembersPage} />
+			</div>
+		</Router>
+	}
 }
 
 export default App;

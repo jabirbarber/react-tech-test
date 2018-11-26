@@ -1,238 +1,238 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 
 body {
-  padding: 10px;
+	padding: 10px;
 }
 
 .table {
-  margin: 1em;
-  display: flex;
-  flex-direction: column;
+	margin: 1em;
+	display: flex;
+	flex-direction: column;
 }
 
 .table-header, .row {
-  display: flex;
+	display: flex;
 }
 
 .table-header div, .row div {
-  flex: 1;
-  padding: 0.2rem 0.4em;
-  border: 1px solid rgb(238, 238, 238);
+	flex: 1;
+	padding: 0.2rem 0.4em;
+	border: 1px solid rgb(238, 238, 238);
 }
 .table-header {
-  background-color: rgb(238, 238, 238);
+	background-color: rgb(238, 238, 238);
 }
 
 .clickable {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .clickable:hover {
-  background: black;
-  color: white;
+	background: black;
+	color: white;
 }
 
 .clickable.row:hover {
-  background: #f5f5f5;
-  color: grey;
-  font-weight: bold;
+	background: #f5f5f5;
+	color: grey;
+	font-weight: bold;
 }
 
 .sortarrow {
-  font-weight: bold;
-  float: right;
+	font-weight: bold;
+	float: right;
 }
 .sortarrow.up:before {
-  content: "\2193";
+	content: "\2193";
 }
 .sortarrow.down:before {
-  content: "\2191";
+	content: "\2191";
 }
 .pagination-container {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    box-sizing: border-box;
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 20px;
+		box-sizing: border-box;
 }
 .pagination-container div {
-  padding: 10px;
-  cursor: pointer;
+	padding: 10px;
+	cursor: pointer;
 }
 .pagination-container div:hover {
-  background: grey;
-  color: white;
-  font-weight: bold;
+	background: grey;
+	color: white;
+	font-weight: bold;
 }
 
 .pagination-container div.selected {
-  background: grey;
-  color: white;
-  font-weight: bold;
+	background: grey;
+	color: white;
+	font-weight: bold;
 }
 
 .attribute-container {
-    display: flex;
-    width: 400px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background: #e9ff77;
-    margin: auto;
+		display: flex;
+		width: 400px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px;
+		background: #e9ff77;
+		margin: auto;
 }
 
 .attribute-container.sub {
-  background: #adbd57;
+	background: #adbd57;
 }
 
 .attribute-container.sub div {
-  font-weight: normal;
+	font-weight: normal;
 }
 
 .attribute-title {
-  width: 200px;
-  font-weight: bold;
+	width: 200px;
+	font-weight: bold;
 }
 .attribute-value {
-  text-align: center;
+	text-align: center;
 }
 
 .games-won-container {
-    background: #c7c7c7;
-    border-radius: 4px;
-    width: 96%;
-    display: block;
-    height: auto;
-    margin-top: 10px;
-    padding: 10px;
+		background: #c7c7c7;
+		border-radius: 4px;
+		width: 96%;
+		display: block;
+		height: auto;
+		margin-top: 10px;
+		padding: 10px;
 }
 
 .games-won-container h5 {
-  margin: 0px;
+	margin: 0px;
 }
 .games-won-container ul {
-    list-style: none;
-    margin: 10px 0px 5px;
-    padding-left: 20px;
+		list-style: none;
+		margin: 10px 0px 5px;
+		padding-left: 20px;
 }
 .games-won-container li {
-  font-size: 14px;
+	font-size: 14px;
 }
 .games-won-container li:nth-child(odd) {
-  color: #23355f;
+	color: #23355f;
 }
 .games-won-container .pagination-container {
-  padding: 0px;
-  justify-content: flex-end;
+	padding: 0px;
+	justify-content: flex-end;
 }
 
 .members-dropdown {
-  width: 50%;
-  height: 46px;
-  background: #171635;
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-  margin-left: 25%;
-  margin-bottom: 20px;
+	width: 50%;
+	height: 46px;
+	background: #171635;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	margin-left: 25%;
+	margin-bottom: 20px;
 }
 
 .members-form {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 50%;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 50%;
 }
 
 .members-form input {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 
 .form-error {
-  background: #d82823;
-  width: 50%;
-  padding: 8px;
-  border-radius: 5px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: white;
-  text-transform: capitalize;
-  font-weight: bold;
-  margin-top: 8px;
-  text-align: center;
-  margin: auto;
-  margin-top: 18px;
+	background: #d82823;
+	width: 50%;
+	padding: 8px;
+	border-radius: 5px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: white;
+	text-transform: capitalize;
+	font-weight: bold;
+	margin-top: 8px;
+	text-align: center;
+	margin: auto;
+	margin-top: 18px;
 }
 
 .members-form button {
-    height: 42px;
-    color: #fff;
-    background-color: #efa53c;
-    border-color: #eea236;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+		height: 42px;
+		color: #fff;
+		background-color: #efa53c;
+		border-color: #eea236;
+		font-weight: bold;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
 }
 
 .spinner-loader-container {
-  width: 100%;
-  height: 500px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+	width: 100%;
+	height: 500px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
 
 .spinner-loader {
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
+		border: 10px solid #f3f3f3; /* Light grey */
+		border-top: 10px solid #3498db; /* Blue */
+		border-radius: 50%;
+		width: 60px;
+		height: 60px;
+		animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
 }
 
 .nav {
-  display: flex;
-  list-style: none;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-  height: 50px;
+	display: flex;
+	list-style: none;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0px;
+	margin: 0px;
+	height: 50px;
 }
 
 .nav li {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  background: #383128;
+	flex: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-weight: bold;
+	background: #383128;
 }
 
 .nav li:hover, .nav li:active {
-  background: #796c5c;
+	background: #796c5c;
 }
 
 .nav li a {
-  color: white;
-  text-decoration: none;
+	color: white;
+	text-decoration: none;
 }
 
 h3 {
-  text-align: center;
+	text-align: center;
 }

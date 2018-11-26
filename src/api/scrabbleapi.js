@@ -9,8 +9,8 @@ export const fetchUsersEndpoint = () => {
 
 export const fetchLeaderboardEndpoint = (params) => {
 	let fetchData = { 
-	    method: 'GET', 
-	    headers: {
+		method: 'GET', 
+		headers: {
 			'X-Total-Count': true
 		}
 	}
@@ -21,8 +21,8 @@ export const fetchLeaderboardEndpoint = (params) => {
 
 export const fetchGamesEndpoint = (params) => {
 	let fetchData = { 
-	    method: 'GET', 
-	    headers: {
+		method: 'GET', 
+		headers: {
 			'X-Total-Count': true
 		}
 	}
@@ -33,12 +33,12 @@ export const fetchGamesEndpoint = (params) => {
 
 export const updateUserEndpoint = (userId, params) => {
 	let patchData = {
-	    method: 'PATCH',
-	    headers: {
-	      'Content-Type': 'application/json'
-    	},
-    	body: JSON.stringify(params)
-  	}
+		method: 'PATCH',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(params)
+	}
 	let endpoint = `${baseUrl}/users/${userId}`;
 	return fetch(endpoint, patchData)
 		.then(resp => resp.json())

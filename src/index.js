@@ -10,14 +10,14 @@ import reducers from './reducers';
 import thunk from 'redux-thunk';
 
 const store = createStore(
-    reducers,
-    applyMiddleware(logger, thunk)
+	reducers,
+	applyMiddleware(logger, thunk)
 );
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('root')
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
 );
 
